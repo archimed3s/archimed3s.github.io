@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "question": "What are the capital of Great Britain?",
+      "multiselect": false,
+      "answers": [
+        "London",
+        "Liverpool",
+        "New York",
+        "Paris"
+      ]
+    },
+    {
+      "question": "DON'T SEE WHAT YOU NEED?",
+      "multiselect": true,
+      "answers": [
+        "Customize existing layout for your app in 3 easy steps",
+        "Define Customization Parameters",
+        "Preview and Generate JSON Code",
+        "Integrate and Go Live"
+      ]
+    }
+  ]
+}

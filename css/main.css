@@ -1,0 +1,4 @@
+/*for reset standart styles in every browsers*/
+@import "reset.css";
+/*main styles for dialog application*/
+@import "dialog.css";

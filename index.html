@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Form application</title>
+    <meta name="author" content="Heorhii Kuzmenko">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-controller="appController">
+<header class="header">
+    <img class="header__img" src="logo" alt="logo">
+    <span class="header__text">Text slogan</span>
+</header>
+<main class="content-wrapper">
+    <div class="counter" ng-if="!isSubmitted">
+        <span class="counter__current">{{current+1}}</span>
+        of
+        <span class="counter__length">{{questions.length}}</span>
+    </div>
+    <div class="test" ng-if="!isSubmitted">
+        <div class="test-wrapper">
+            <div class="test-question" ng-repeat="question in questions" ng-init="qstIndex = $index">
+                <span class="test__current-question">Q. {{question.question}}</span>
+                <div class="test__multiselect-answer" ng-if="question.multiselect">(You can choose a few
+                    answers here)
+                </div>
+                <ul class="test-answers">
+                    <li class="test-answers__answer" ng-repeat="answer in question.answers">
+                        <input class="test-answers__answer-input"
+                                ng-if="!question.multiselect"
+                                type="radio"
+                                ng-model="userAnswers[qstIndex].answers[$index]"
+                                ng-value="true"
+                                id="answer{{qstIndex}}{{$index}}"
+                                name="answer">
+                        <label ng-if="!question.multiselect" class="test-answers__answer-text" for="answer{{qstIndex}}{{$index}}">{{answer}}</label>
+                        <input class="test-answers__answer-input"
+                                ng-if="question.multiselect"
+                                type="checkbox"
+                                ng-model="userAnswers[qstIndex].answers[$index]"
+                                ng-checked="userAnswers[qstIndex].answers[$index]"
+                                id="answerM{{qstIndex}}{{$index}}"
+                                name="answerM">
+                        <label ng-if="question.multiselect" class="test-answers__answer-text" for="answerM{{qstIndex}}{{$index}}">{{answer}}</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="end" ng-if="isSubmitted">
+        Thanks for your response!
+    </div>
+</main>
+<div class="navigation" ng-if="!isSubmitted">
+    <button class="navigation__back" ng-click="back()" ng-show="current !== 0">Back</button>
+    <button class="navigation__next"
+            ng-click="next()"
+            ng-show="current !== questions.length-1"
+            ng-disabled="isDisabled()">Next
+    </button>
+    <button class="navigation__submit" ng-click="submitData()" ng-show="current === questions.length-1"
+            ng-disabled="isDisabled()">Submit
+    </button>
+</div>
+</body>
+</html>
