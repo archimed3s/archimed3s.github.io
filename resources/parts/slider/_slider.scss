@@ -1,0 +1,30 @@
+.slider {
+	overflow: hidden;
+
+	&__content {
+		display: flex;
+		transition: margin .3s ease;
+	}
+
+	&__elem {
+		display: block;
+		margin: 0 auto;
+
+		&:nth-child(2) {
+			position: relative;
+		}
+
+		source,
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 4px;
+			box-shadow: 0 0 48px 2px $black;
+		}
+	}
+
+	&__control {
+		display: none;
+	}
+}

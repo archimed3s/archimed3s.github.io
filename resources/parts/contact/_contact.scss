@@ -1,0 +1,208 @@
+.contact {
+	padding: 0 24px;
+	background: url($image-path + 'bg-contact-mobile.png') 0 0 no-repeat;
+	background-size: cover;
+	font-size: 12px;
+	letter-spacing: 0.7px;
+	color: rgba($white, .3);
+
+	@media all and (min-width: $res-desk) {
+		background-image: url($image-path + 'bg-contact-desktop.png');
+	}
+
+	.section__title {
+		padding: 42px 0 32px;
+
+		@media all and (min-width: $res-desk) {
+			padding: 42px 0 65px;
+		}
+	}
+
+	.form {
+
+		@media all and (min-width: $res-desk) {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+		}
+
+		&__watch-info {
+
+			@media all and (min-width: $res-desk) {
+				width: 45%;
+			}
+		}
+
+		&__enter-info {
+
+			@media all and (min-width: $res-desk) {
+				width: 32%;
+			}
+		}
+
+		&__label {
+			position: relative;
+			display: block;
+			margin-bottom: 37px;
+
+			&:last-child {
+
+				@media all and (min-width: $res-desk) {
+					margin: 0;
+				}
+			}
+		}
+
+		&__input {
+			display: block;
+			width: 100%;
+			padding: 15px 30px 15px 0;
+			border: none;
+			border-bottom: 4px solid rgba($white, .3);
+			outline: none;
+			background-color: transparent;
+			font-size: 16px;
+			letter-spacing: 1px;
+			color: $white;
+			transition: all .3s ease;
+
+			&:focus {
+				border-color: $white;
+				color: $white;
+			}
+
+			&:invalid ~ .form__invalid,
+			&:invalid ~ .form__invalid-icon,
+			&:valid ~ .form__valid-icon {
+				display: block;
+			}
+
+			&:valid ~ .form__invalid,
+			&:valid ~ .form__invalid-icon,
+			&:invalid ~ .form__valid-icon {
+				display: none;
+			}
+		}
+
+		&__valid-icon,
+		&__invalid-icon {
+			display: none;
+			position: absolute;
+			top: 30px;
+			right: 0;
+		}
+
+		&__invalid {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			letter-spacing: 0px;
+			color: $text-red;
+		}
+
+		.watch-info {
+			padding: 32px;
+			border-radius: 4px;
+			background-color: $white;
+			font-size: 16px;
+			color: $black;
+
+			&--section + .watch-info--section {
+				border-top: 3px solid rgba($black, .1);
+			}
+
+			&__header {
+
+				@media all and (min-width: $res-desk) {
+					display: flex;
+					justify-content: space-between;
+				}
+
+				&-title {
+					margin: 13px 0 18px;
+					font-size: 24px;
+					font-weight: 400;
+					color: $text-purple;
+				}
+			}
+
+			&__place {
+
+				@media all and (min-width: $res-desk) {
+					display: flex;
+					justify-content: space-between;
+					flex-flow: row wrap;
+				}
+
+				&-planet {
+					margin: 22px 0 0;
+					font-size: 24px;
+					font-weight: 400;
+
+					@media all and (min-width: $res-desk) {
+						width: 100%;
+					}
+				}
+
+				&-country {
+					margin: 3px 0 0;
+					letter-spacing: 0px;
+				}
+
+				&-date {
+					margin: 5px 0 24px;
+					opacity: .3;
+					letter-spacing: 0;
+				}
+			}
+
+			&__person {
+
+				&-seat {
+					margin: 26px 0 0;
+					letter-spacing: 0;
+				}
+
+				&-name {
+					margin: 13px 0 0;
+					letter-spacing: 0;
+				}
+
+				&-email {
+					margin: 5px 0;
+					opacity: .3;
+					letter-spacing: 0;
+				}
+
+				&-tel {
+					margin: 5px 0;
+					opacity: .3;
+					letter-spacing: 0;
+				}
+			}
+		}
+
+		&__submit {
+			width: 100%;
+			padding: 22px 0;
+			border: none;
+			outline: none;
+			margin: 23px 0 72px;
+			background-color: $bg-purple;
+			font-size: 24px;
+			letter-spacing: 2px;
+			color: $white;
+			transition: all .3s ease;
+
+			&:hover {
+				background-color: forestgreen;
+			}
+
+			@media all and (min-width: $res-desk) {
+				width: 24%;
+				margin: 84px 0 142px;
+			}
+		}
+	}
+}
