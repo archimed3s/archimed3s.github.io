@@ -1,5 +1,5 @@
 .space {
-	min-height: 432px;
+	min-height: 345px;
 	overflow: hidden;
 
 	@media all and (min-width: $res-desk) {
@@ -48,6 +48,7 @@
 			margin: 0 auto;
 			text-align: center;
 			color: $text-black;
+			cursor: pointer;
 			transition: all .3s ease;
 
 			@media all and (min-width: $res-desk) {
@@ -119,27 +120,6 @@
 				}
 			}
 
-			&--active {
-
-				.space__container-elem-info {
-					opacity: 1;
-					color: $text-purple;
-				}
-			}
-
-			&--active {
-
-				@media all and (min-width: $res-desk) {
-					border-color: $white;
-					background-color: $white;
-					color: $black;
-
-					.space__container-elem-icon * {
-						fill: $text-purple;
-					}
-				}
-			}
-
 			&:hover {
 
 				@media all and (min-width: $res-desk) {
@@ -149,6 +129,30 @@
 
 					.space__container-elem-icon * {
 						fill: $white;
+					}
+				}
+			}
+
+			&--active {
+
+				.space__container-elem-info {
+					opacity: 1;
+					color: $text-purple;
+					cursor: default;
+				}
+			}
+
+			&--active,
+			&--active:hover {
+
+				@media all and (min-width: $res-desk) {
+					border-color: $white;
+					background-color: $white;
+					color: $black;
+					cursor: default;
+
+					.space__container-elem-icon * {
+						fill: $text-purple;
 					}
 				}
 			}

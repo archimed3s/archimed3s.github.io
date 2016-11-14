@@ -1,0 +1,161 @@
+.seat {
+	overflow: hidden;
+
+	@media all and (min-width: $res-desk) {
+		min-height: 751px;
+	}
+
+	.section__title {
+		padding: 19px 0 28px;
+
+		@media all and (min-width: $res-desk) {
+			padding: 40px 0 28px;
+		}
+	}
+
+	&-block {
+
+		@media all and (min-width: $res-desk) {
+			transform: rotate(90deg);
+		}
+
+		&__wrap {
+			position: relative;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			width: 128px;
+			padding: 95px 0 13px;
+			border: 4px solid rgba($white, .3);
+			border-radius: 50% 50% 20% 20%;
+			margin: 0 auto;
+
+			@media all and (min-width: $res-desk) {
+				z-index: 1;
+				width: 208px;
+				height: 528px;
+				padding: 126px 0 39px;
+				margin: 12px auto 0;
+				background-color: $bg-main;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 120px;
+				right: -77px;
+				z-index: 1;
+				width: 342px;
+				height: 68px;
+				background: url($image-path + 'rocket-top1.png') 0 0 no-repeat;
+				background-size: 100%;
+				transform: rotate(-90deg);
+				transition: all .3s ease;
+
+				@media all and (min-width: $res-desk) {
+					top: 204px;
+					right: -121px;
+					z-index: 1;
+					width: 543px;
+					height: 108px;
+				}
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 120px;
+				left: -77px;
+				width: 342px;
+				height: 68px;
+				background: url($image-path + 'rocket-top2.png') 0 0 no-repeat;
+				background-size: 100%;
+				transform: rotate(-90deg);
+				transition: all .3s ease;
+
+				@media all and (min-width: $res-desk) {
+					top: 204px;
+					left: -121px;
+					z-index: 1;
+					width: 543px;
+					height: 108px;
+				}
+			}
+
+			&:hover:before {
+				right: 1px;
+
+				@media all and (min-width: $res-desk) {
+					right: 18px;
+				}
+			}
+
+			&:hover:after {
+				left: 1px;
+
+				@media all and (min-width: $res-desk) {
+					left: 18px;
+				}
+			}
+		}
+
+		&__place {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 36px;
+			height: 36px;
+			border: 4px solid $black;
+			border-radius: 0 0 12px 12px;
+			margin: 0 24px 16px 0;
+			font-size: 14px;
+			color: $white;
+			cursor: pointer;
+			transition: all .3s ease;
+
+			@media all and (min-width: $res-desk) {
+				width: 48px;
+				height: 48px;
+				border-radius: 12px 0 0 12px;
+				margin: 0 55px 16px 0;
+				font-size: 24px;
+				transform: rotate(-90deg);
+			}
+
+			&:nth-child(even) {
+				margin-right: 0;
+			}
+
+			&:hover {
+				border-color: $border-purple;
+			}
+
+			&--active,
+			&--active:hover {
+				border-color: $white;
+				background-color: $white;
+				color: $black;
+				cursor: default;
+			}
+		}
+
+		&__rocket {
+			width: 320px;
+			height: 132px;
+			margin: 0 auto;
+			background: url($image-path + 'rocket.png') -255px no-repeat;
+			background-size: 150%;
+			transform: rotate(-90deg);
+
+			@media all and (min-width: $res-desk) {
+				position: absolute;
+				bottom: -454px;
+				right: 0;
+				width: 100%;
+				height: 155px;
+				margin: 0 auto;
+				background: url($image-path + 'rocket.png') 0 no-repeat;
+			}
+		}
+	}
+}

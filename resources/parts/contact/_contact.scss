@@ -1,20 +1,20 @@
 .contact {
 	padding: 0 24px;
-	background: url($image-path + 'bg-contact-mobile.png') 0 0 no-repeat;
+	background: url($image-path + 'bg-contact-mobile.jpg') 0 0 no-repeat;
 	background-size: cover;
 	font-size: 12px;
 	letter-spacing: 0.7px;
 	color: rgba($white, .3);
 
 	@media all and (min-width: $res-desk) {
-		background-image: url($image-path + 'bg-contact-desktop.png');
+		background-image: url($image-path + 'bg-contact-desktop.jpg');
 	}
 
 	.section__title {
 		padding: 42px 0 32px;
 
 		@media all and (min-width: $res-desk) {
-			padding: 42px 0 65px;
+			padding: 97px 0 54px;
 		}
 	}
 
@@ -24,19 +24,21 @@
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: space-around;
+			max-width: 1072px;
+			margin: 0 auto;
 		}
 
 		&__watch-info {
 
 			@media all and (min-width: $res-desk) {
-				width: 45%;
+				width: 49%;
 			}
 		}
 
 		&__enter-info {
 
 			@media all and (min-width: $res-desk) {
-				width: 32%;
+				width: 39%;
 			}
 		}
 
@@ -186,22 +188,25 @@
 		&__submit {
 			width: 100%;
 			padding: 22px 0;
-			border: none;
+			border: 4px solid $border-purple;
 			outline: none;
 			margin: 23px 0 72px;
 			background-color: $bg-purple;
 			font-size: 24px;
 			letter-spacing: 2px;
 			color: $white;
+			cursor: pointer;
 			transition: all .3s ease;
 
 			&:hover {
-				background-color: forestgreen;
+				border-color: $black;
+				background-color: transparent;
 			}
 
 			@media all and (min-width: $res-desk) {
-				width: 24%;
-				margin: 84px 0 142px;
+				width: 27%;
+				padding: 18px 0;
+				margin: 97px 0 132px;
 			}
 		}
 	}

@@ -1,17 +1,33 @@
+@keyframes slider{
+	0% { left: -5%; }
+	20% { left: -100%; }
+	33% { left: -100%; }
+	56% { left: -195%; }
+	66% { left: -195%; }
+	100% { left: -5%; }
+}
+
 .slider {
 	overflow: hidden;
 
 	&__content {
+		position: relative;
 		display: flex;
-		transition: margin .3s ease;
+		justify-content: center;
+		width: 300%;
+		left: 0;
+		text-align: left;
+		font-size: 0;
+		animation: 10s slider infinite;
 	}
 
 	&__elem {
-		display: block;
-		margin: 0 auto;
+		width: 32.333333%;
+		transition: all .3s ease;
 
 		&:nth-child(2) {
 			position: relative;
+			z-index: 1;
 		}
 
 		source,
